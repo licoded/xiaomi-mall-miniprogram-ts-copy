@@ -4,10 +4,10 @@
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff6700",
+    "navigationBarTitleText": "Mi Mall",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#8a8a8a",

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/discover/discover",
     "pages/logs/logs"
   ],
   "window": {
@@ -18,6 +19,12 @@
         "text": "首页",
         "iconPath": "/static/icon/home.png",
         "selectedIconPath": "/static/icon/home_fill.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "/static/icon/search.png",
+        "selectedIconPath": "/static/icon/search_fill.png"
       },
       {
         "pagePath": "pages/logs/logs",

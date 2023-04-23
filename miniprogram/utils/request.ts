@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/";
+const baseURL = "https://licoded.site";
 
 function request<IParams, IResponse>(
   api: string,
@@ -32,21 +32,16 @@ function request<IParams, IResponse>(
   });
 }
 
-function post<IParams, IResponse>(
+export function post<IParams, IResponse>(
   url: string,
   params: IParams,
 ): Promise<IResponse> {
   return request(url, params, "POST");
 }
 
-function get<IParams, IResponse>(
+export function get<IParams, IResponse>(
   url: string,
   params: IParams,
 ): Promise<IResponse> {
   return request(url, params, "GET");
-}
-
-export default {
-  post,
-  get,
 }

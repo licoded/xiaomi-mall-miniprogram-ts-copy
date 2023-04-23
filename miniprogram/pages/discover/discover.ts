@@ -1,4 +1,5 @@
-import { getCategoryList, ICategory } from '../../api/discover/index';
+import { getCategoryList } from '../../api/discover/index';
+import { ICategory } from '../../types/discover';
 
 Page({
 

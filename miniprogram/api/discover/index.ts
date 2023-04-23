@@ -1,9 +1,5 @@
 import { post } from '../../utils/request';
-
-export interface ICategory {
-  category_id: number;
-  category_name: string;
-}
+import { ICategory } from '../../types/discover';
 
 interface IGetcategoryListResp { 
   code: number;

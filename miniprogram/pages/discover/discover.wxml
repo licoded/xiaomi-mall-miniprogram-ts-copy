@@ -1,2 +1,9 @@
-<!--pages/discover/discover.wxml-->
-<text>pages/discover/discover.wxml</text>
+<!-- tabBar BEGIN -->
+<view>
+  <i-tabs current="{{ current_scroll }}" scroll bindchange="handleTabChange">
+    <block wx:for="{{categoryList}}" wx:key="category_id">
+      <i-tab key="{{item.category_id}}" title="{{item.category_name}}"></i-tab>
+    </block>
+  </i-tabs>
+</view>
+<!-- tabBar END -->

@@ -1,3 +1,4 @@
+import type { ICategory } from '../../types/category';
 import { getCategoryList } from '../../api/discover/index';
 import { ICategory } from '../../types/discover';
 

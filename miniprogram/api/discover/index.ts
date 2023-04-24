@@ -1,5 +1,5 @@
 import { post } from '../../utils/request';
-import { ICategory } from '../../types/discover';
+import { ICategory } from '../../types/category';
 
 interface IGetcategoryListResp { 
   code: number;

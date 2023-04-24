@@ -8,6 +8,8 @@
   "compileType": "miniprogram",
   "projectname": "ts-less-demo",
   "setting": {
+    "ignoreUploadUnusedFiles": false,
+    "ignoreDevUnusedFiles": false,
     "useCompilerPlugins": [
       "typescript",
       "less"

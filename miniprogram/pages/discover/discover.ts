@@ -34,9 +34,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  async onLoad() {
-    const currentCategoryId = wx.getStorageSync('categoryId');
-
+  async onLoad() {    
     const categoryList = await getCategoryList();
     // const categoryAll = {
     //   category_id: 0,
@@ -44,13 +42,13 @@ Page({
     // };
     // categoryList.unshift(categoryAll);
     this.setData({
-      currentCategoryId,
       categoryList,
     });
 
+    if(this.data.currentCategoryId) return ;
     // set currentCategoryId
     this.setData({
-      currentCategoryId: this.data.currentCategoryId || categoryList[0].category_id,
+      currentCategoryId: categoryList[0].category_id,
     });
     this.updateProductList();
   },
@@ -66,7 +64,16 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const currentCategoryId = wx.getStorageSync('categoryId');
+    if(currentCategoryId == null) return ;
+    wx.setStorageSync('categoryId', null);
 
+    if(currentCategoryId) {
+      this.setData({
+        currentCategoryId,
+      });
+      this.updateProductList();
+    }
   },
 
   /**

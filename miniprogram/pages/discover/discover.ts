@@ -22,7 +22,7 @@ Page({
     this.setData({ productList });
   },
 
-  async handleTabChange(e) {
+  async handleTabChange(e: WechatMiniprogram.CustomEvent<{key: string}>) {
     this.setData({
       currentCategoryId: e.detail.key,
     });

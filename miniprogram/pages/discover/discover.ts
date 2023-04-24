@@ -1,6 +1,6 @@
 import type { ICategory } from '../../types/category';
-import { getCategoryList } from '../../api/discover/index';
-import { ICategory } from '../../types/discover';
+import type { IProduct } from '../../types/product';
+import { getCategoryList, getProductByCategory } from '../../api/discover/index';
 
 Page({
 
@@ -9,10 +9,26 @@ Page({
    */
   data: {
     categoryList: [] as ICategory[],
+    currentCategoryId: 0,
+    productList: [] as IProduct[],
   },
 
-  async handleTabChange() {
+  async updateProductList() {
+    const productList = await getProductByCategory({
+      pageSize: 10,
+      currentPage: 1,
+      categoryID: [this.data.currentCategoryId],
+    });
+    this.setData({ productList });
+  },
+
+  async handleTabChange(e) {
+    this.setData({
+      currentCategoryId: e.detail.key,
+    });
+    
     console.log('tab has been changed!');
+    this.updateProductList();
   },
 
   /**
@@ -20,12 +36,18 @@ Page({
    */
   async onLoad() {
     const categoryList = await getCategoryList();
-    const categoryAll = {
-      category_id: 0,
-      category_name: "全部"
-    };
-    categoryList.unshift(categoryAll);
+    // const categoryAll = {
+    //   category_id: 0,
+    //   category_name: "全部"
+    // };
+    // categoryList.unshift(categoryAll);
     this.setData({ categoryList });
+
+    // set currentCategoryId
+    this.setData({
+      currentCategoryId: categoryList[0].category_id,
+    });
+    this.updateProductList();
   },
 
   /**

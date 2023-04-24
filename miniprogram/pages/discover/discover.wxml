@@ -1,9 +1,17 @@
 <!-- tabBar BEGIN -->
 <view>
-  <i-tabs current="{{ current_scroll }}" scroll bindchange="handleTabChange">
-    <block wx:for="{{categoryList}}" wx:key="category_id">
-      <i-tab key="{{item.category_id}}" title="{{item.category_name}}"></i-tab>
+  <i-tabs current="{{ currentCategoryId }}" scroll bindchange="handleTabChange">
+    <block wx:for="{{ categoryList }}" wx:key="category_id">
+      <i-tab key="{{ item.category_id }}" title="{{ item.category_name }}"></i-tab>
     </block>
   </i-tabs>
 </view>
 <!-- tabBar END -->
+<!-- productList BEGIN -->
+<view>
+  <my-list arr="{{ productList }}"></my-list>
+</view>
+<!-- productList END -->
+<!-- page bottom tip BEGIN -->
+<i-load-more tip="暂无更多数据" loading="{{ false }}" wx:if="{{productTotal == product.length}}"/>
+<!-- page bottom tip END -->

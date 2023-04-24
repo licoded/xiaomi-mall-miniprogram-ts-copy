@@ -15,7 +15,7 @@ interface IGetProductByCategoryResp {
 interface categoryIDPageParams {
   pageSize: number;
   currentPage: number;
-  categoryID: number[];
+  categoryID: string[];
 }
 
 export async function getCategoryList() {

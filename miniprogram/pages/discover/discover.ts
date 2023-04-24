@@ -9,7 +9,7 @@ Page({
    */
   data: {
     categoryList: [] as ICategory[],
-    currentCategoryId: 0,
+    currentCategoryId: '0',
     productList: [] as IProduct[],
   },
 

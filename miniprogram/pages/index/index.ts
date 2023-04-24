@@ -13,4 +13,13 @@ Page({
     categoryListArr.push(categoryList.slice(categoryList.length/2));
     this.setData({ categoryListArr });
   },
+  handleCategoryTap(e: WechatMiniprogram.CustomEvent<
+    {key: string},
+    any,
+    {category_item: ICategory}
+  >) {
+    const categoryItem = e.currentTarget.dataset.category_item;
+    wx.setStorageSync('categoryId', categoryItem.category_id);    
+    wx.switchTab({ url: '/pages/discover/discover'})
+  },
 })

@@ -9,7 +9,7 @@ Page({
    */
   data: {
     categoryList: [] as ICategory[],
-    currentCategoryId: '0',
+    currentCategoryId: '' as string,
     productList: [] as IProduct[],
   },
 
@@ -35,17 +35,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   async onLoad() {
+    const currentCategoryId = wx.getStorageSync('categoryId');
+
     const categoryList = await getCategoryList();
     // const categoryAll = {
     //   category_id: 0,
     //   category_name: "全部"
     // };
     // categoryList.unshift(categoryAll);
-    this.setData({ categoryList });
+    this.setData({
+      currentCategoryId,
+      categoryList,
+    });
 
     // set currentCategoryId
     this.setData({
-      currentCategoryId: categoryList[0].category_id,
+      currentCategoryId: this.data.currentCategoryId || categoryList[0].category_id,
     });
     this.updateProductList();
   },

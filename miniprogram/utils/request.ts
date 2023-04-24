@@ -1,4 +1,4 @@
-const baseURL = "https://licoded.site";
+export const baseURL = "https://licoded.site";
 
 function request<IParams, IResponse>(
   api: string,

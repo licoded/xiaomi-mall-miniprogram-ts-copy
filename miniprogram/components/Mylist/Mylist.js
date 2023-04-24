@@ -1,6 +1,5 @@
-const {
-  baseURL
-} = getApp().globalData;
+import { baseURL } from "../../utils/request";
+
 Component({
   /**
    * 组件的属性列表

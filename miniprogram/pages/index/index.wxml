@@ -1,7 +1,7 @@
 <!-- CategoryList BEGIN -->
 <view class="category-list">
-  <i-grid i-class="grid" wx:for="{{ categoryList }}" wx:for-item="categoryItem" wx:key="index">
-    <i-grid-item wx:for="{{ categoryItem }}" wx:key="category_id">
+  <i-grid i-class="grid" wx:for="{{ categoryListArr }}" wx:for-item="categoryList" wx:key="index">
+    <i-grid-item wx:for="{{ categoryList }}" wx:for-item="categoryItem" wx:key="category_id">
       <view bindtap="tapCategory" data-categoryid="{{ categoryItem.category_id }}">
         <i-grid-icon>
           <image src="{{'../../static/icon/category_'+categoryItem.category_id+'.png'}}" />
